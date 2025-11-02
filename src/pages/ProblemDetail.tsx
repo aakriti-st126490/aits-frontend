@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
+import ProposalSection from "../components/ProposalSection";
 
 const mockProblem = {
   id: 1,
@@ -42,6 +43,8 @@ export default function ProblemDetail() {
 
       {/* Comment Section */}
       <CommentSection problemId={mockProblem.id} />
+
+      <ProposalSection problemId={mockProblem.id} />
     </div>
   );
 }

@@ -5,6 +5,10 @@ import Signup from "./pages/Signup";
 import ProblemList from "./pages/ProblemList";
 import ProblemDetail from "./pages/ProblemDetail";
 import Dashboard from "./pages/Dashboard";
+import DashboardLayout from "./components/DashboardLayout";
+import MyProfile from "./pages/dashboard/MyProfile";
+import MyProposals from "./pages/dashboard/MyProposals";
+import MyProblems from "./pages/dashboard/MyProblems";
 
 export default function App() {
   return (
@@ -15,7 +19,12 @@ export default function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/problems" element={<ProblemList />} />
         <Route path="/problems/:id" element={<ProblemDetail />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="profile" element={<MyProfile />} />
+          <Route path="problems" element={<MyProblems />} />
+          <Route path="proposals" element={<MyProposals />} />
+        </Route>
       </Routes>
     </Router>
 
